@@ -10,3 +10,12 @@ black = ['Blank', 'Blank', '1F', '1F', '1D', '1D']
 purple = ['Blank', '1F', '1D', '2F', '1D', '1D', '1F, 1D', '2D']
 red = ['Blank', '1F', '1F', '2F', '2F', '1D', '1D', '1F, 1D', '1F, 1D', '2D', '2D', 'BH']
 white = ['1B', '1B', '1B', '1B', '1B', '1B', '2B', '1L', '1L', '2L', '2L', '2L']
+
+#basic roll function
+def roll(color, number):
+    i = 1
+    result = []
+    while i <= number:
+        result.append(random.choice(color))
+        i += 1
+    return result

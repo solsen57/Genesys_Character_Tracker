@@ -4,7 +4,9 @@ import dice_roller as dr
 #character sheet builder
 
 #dice roller
-print(dr.blue)
+blue = dr.blue
+print(blue)
+print(dr.roll(blue, 1))
 #main functionality
 #set up character
 #roll checks
