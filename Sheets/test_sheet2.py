@@ -1,4 +1,4 @@
-char_name = 'Test Sheet1'
+char_name = 'Test Sheet2'
 
 exp_total = 0
 
