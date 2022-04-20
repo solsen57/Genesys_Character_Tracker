@@ -3,10 +3,11 @@ import dice_roller as dr
 
 #character sheet builder
 
-#dice roller
-blue = dr.blue
-print(blue)
-print(dr.roll(blue, 1))
+#dice roller - testing fucntions
+dr.sk_roll(0,1,1,0,1,0)
+dr.init_roll(1,2)
+dr.force_roll(2)
+
 #main functionality
 #set up character
 #roll checks
