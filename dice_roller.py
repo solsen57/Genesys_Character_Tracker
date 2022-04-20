@@ -46,22 +46,12 @@ def results_text(list):
 def init_roll(cha = 1, rk = 0):
     if rk == 0:
         res = roll(green, cha)
-        print('1')
-        print(res)
         return res
     elif (cha == rk) & (rk != 0):
         res = roll(yellow, cha)
-        print('2')
-        print(res)
         return res
     else:
         upped = min(cha, rk)
         nor = max(cha, rk) - upped
         res = roll(yellow, upped) + roll(green, nor)
-        print('3')
-        print(upped)
-        print(nor)
-        print(res)
         return res
-
-init_roll(4, 1)
