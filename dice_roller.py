@@ -45,6 +45,7 @@ def results_text(good_v, good_n, good_h, bad_v, bad_n, bad_h):
 
     #print results
     res_strings = []
+    print('Net results of Roll: ')
     if (vant == 0) and (norm == 0) and (hype == 0):
         print('It was a wash! Net zero!')
     else:
@@ -60,7 +61,6 @@ def results_text(good_v, good_n, good_h, bad_v, bad_n, bad_h):
             res_strings.append(f'{abs(hype)} DISPAIR')
         elif hype > 0:
             res_strings.append(f'{abs(hype)} TRIUMPH')
-    print('Results of Roll: ')
     print(*res_strings, sep = ', ')
     return vant, norm, hype
 
@@ -91,23 +91,30 @@ def roll_text(list):
     if (sum(bad_h) != 0):
         res_strings.append(f'{sum(bad_h)} DISPAIR')
 
-    print('Roll: ')
+    print('Results of Roll: ')
     print(*res_strings, sep = ', ')
     return good_v, good_n, good_h, bad_v, bad_n, bad_h
 
 #initiative roller
-def init_roll(cha = 1, rk = 0):
+def init_roll(char, rk = 0):
     if rk == 0:
-        res = roll(green, cha)
+        res = roll(green, char)
         roll_text(res)
         return res
-    elif (cha == rk) & (rk != 0):
-        res = roll(yellow, cha)
+    elif (char == rk) & (rk != 0):
+        res = roll(yellow, char)
         roll_text(res)
         return res
     else:
-        upped = min(cha, rk)
-        nor = max(cha, rk) - upped
+        upped = min(char, rk)
+        nor = max(char, rk) - upped
         res = roll(yellow, upped) + roll(green, nor)
         roll_text(res)
         return res
+
+#skill rollers
+def sk_roll(bv, gn, yh, bbv, pn, rh):
+    main_res = roll(blue, bv) + roll(green, gn) + roll(yellow, yh) + roll(black, bbv) + roll(purple, pn) + roll(red, rh)
+    good_v, good_n, good_h, bad_v, bad_n, bad_h = roll_text(main_res)
+    results_text(good_v, good_n, good_h, bad_v, bad_n, bad_h)
+    return main_res
